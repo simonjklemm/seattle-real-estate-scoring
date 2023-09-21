@@ -49,8 +49,8 @@ In order to install the environment you can use the following commands:
 
 ```
 pyenv local 3.11.3
-python -m venv .venv
+python3 -m venv .venv
 source .venv/bin/activate
-pip install --upgrade pip
-pip install -r requirements.txt
+pip3 install --upgrade pip
+pip3 install -r requirements.txt
 ```
