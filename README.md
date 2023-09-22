@@ -1,56 +1,74 @@
-# ds-project-template
+# Seattle Real Estate Evaluation
 
-Template for creating ds simple projects
+## Introduction
 
-## Requirements
+This project aims to perform Exploratory Data Analysis (EDA) on real estate data from King County, Washington, USA. The goal is to derive insights and recommendations for potential buyers, specifically focusing on William and Angelo Rodriguez, a young professional couple looking for two new homes: one in the city center and another as a fixer-upper in the countryside of King County.
 
-- pyenv
-- python==3.11.3
+## Project Goals
 
-## Setup
+1. Analyze real estate data to provide recommendations on suitable zip codes for the buyers.
+2. Investigate urbanity based on population density.
+3. Determine the optimal time of year to buy a country house in King County.
 
-One of the first steps when starting any data science project is to create a virtual environment. For this project you have to create this environment from scratch yourself. However, you should be already familiar with the commands you will need to do so. The general workflow consists of... 
+## Data Description
 
-* setting the python version locally to 3.11.3
-* creating a virtual environment using the `venv` module
-* activating your newly created environment 
-* upgrading `pip` (This step is not absolutely necessary, but will save you trouble when installing some packages.)
-* installing the required packages via `pip`
+The dataset used is a comprehensive database containing information about the King County real estate market. Additionally, population density data from the US Census is integrated for analysis.
 
-At the end, you want to make sure that people who are interested in your project can create an identical environment on their own computer in order to be able to run your code without running into errors. Therefore you can create a `requirements file` and add it to your repository. You can create such a file by running the following command: 
+## Getting Started
 
-```bash
-pip freeze > requirements.txt
-```
+To run this project locally, follow these steps:
 
-*Note: In rare case such a requirements file created with `pip freeze` might not ensure that another (especially M1 chip) user can install and execute it properly. This can happen if libraries need to be compiled (e.g. SciPy). Then it also depends on environment variables and the actual system libraries.*
+1. Clone the repository to your local machine.
 
-### Unit testing (Optional)
+2. Ensure you have the necessary dependencies installed:
+   - [Pandas](https://pandas.pydata.org/)
+   - [Matplotlib](https://matplotlib.org/)
+   - [Seaborn](https://seaborn.pydata.org/)
+   - [Geopandas](https://geopandas.org/)
+   - [Plotly](https://plotly.com/)
 
-If you write python scripts for your data processing methods, you can also write unit tests. In order to run the tests execute in terminal:
-
-```bash
-pytest
-```
-
-This command will execute all the functions in your project that start with the word **test**.
-
-
-### Environment
-
-This repo contains a requirements.txt file with a list of all the packages and dependencies you will need. Before you install the virtual environment, make sure to install postgresql if you haven't done it before.
-
+3. Install the required libraries by running the command:
 ```bash
 brew update
 brew install postgresql
-```
-
-In order to install the environment you can use the following commands:
-
-```
 pyenv local 3.11.3
-python3 -m venv .venv
+python -m venv .venv
 source .venv/bin/activate
-pip3 install --upgrade pip
-pip3 install -r requirements.txt
+pip install --upgrade pip
+pip install -r requirements.txt
 ```
+
+4. Acquire the data and configure the database connection. Ensure that the necessary environment variables are set (e.g., `DB_STRING`).
+
+5. Execute the Jupyter notebook to perform the data analysis.
+
+## Data Preprocessing
+
+- Data types were adjusted, missing values were handled, and unreasonable data was corrected.
+
+- Feature engineering was performed to calculate client scores based on specified criteria.
+
+## Data Analysis
+
+- The project involved visualizing real estate data on maps to provide meaningful insights.
+
+- Maps were created to display average sales price, client scores, and population density by zip code.
+
+## Conclusion
+
+The project successfully provided valuable recommendations for potential buyers in King County. Insights on urbanity, timing of purchase, and pricing factors were derived.
+
+## Further Steps
+
+Potential next steps for this project include in-depth analysis of optimal purchasing times and further refinement of client recommendations.
+
+## Acknowledgements
+
+- Shapefile for King County: [Link to Dataset](https://gis-kingcounty.opendata.arcgis.com/datasets/kingcounty::zipcodes-for-king-county-and-surrounding-area-zipcode-area/explore)
+
+## Versioning
+
+- Notebook and insights by Simon Klemm.
+- Version: 1.0
+- Date: 2023-09-22
+

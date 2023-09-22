@@ -144,3 +144,9 @@ models/*.pkl
 
 # vscode Stuff
 .vscode
+
+# requirement files old
+requirements_old*
+
+1_Fetching_the_data_eda.jpynb
+assignment.mk
